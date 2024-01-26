@@ -3,79 +3,70 @@ package com.gridnine.testing;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class FilteringParametres {
-    private LocalDate depDate;
-    private LocalTime depTimeMin;
-    private LocalTime depTimeMax;
-    private LocalTime arrTimeMin;
-    private LocalTime arrTimeMax;
-    private LocalDate arrDate;
-    private boolean noTransfer;
-    private boolean oneTransfer;
-    private boolean twoTransfers;
-    private int maxDurationOfTransfers;
-    private int maxTravelTime;
+/**
+ * Bean with parameters for filtering flights.
+ */
+public class FilteringOptions {
+    private LocalDate departureDate;
+    private LocalTime departureTimeMin;
+    private LocalTime departureTimeMax;
+    private LocalTime arrivalTimeMin;
+    private LocalTime arrivalTimeMax;
+    private LocalDate arrivalDate;
+    private boolean noTransfer = true;
+    private boolean oneTransfer = true;
+    private boolean twoTransfers = true;
+    private Integer maxDurationOfTransfers;
+    private Integer maxTravelTime;
+    private boolean flightsFromNow;
+    private boolean segmentDatesFilter;
 
-    public FilteringParametres(LocalDate depDate, LocalTime depTimeMin, LocalTime depTimeMax, LocalTime arrTimeMin, LocalTime arrTimeMax, LocalDate arrDate, boolean noTransfer, boolean oneTransfer, boolean twoTransfers, int maxDurationOfTransfers, int maxTravelTime) {
-        this.depDate = LocalDate.now();
-        this.depTimeMin = LocalTime.of(0, 0);
-        this.depTimeMax = LocalTime.of(23, 59);
-        this.arrTimeMin = arrTimeMin = LocalTime.of(0, 0);
-        this.arrTimeMax = arrTimeMax = LocalTime.of(23, 59);
-        this.arrDate = null;
-        this.noTransfer = noTransfer = true;
-        this.oneTransfer = oneTransfer = true;
-        this.twoTransfers = twoTransfers = true;
-        this.maxDurationOfTransfers = 40;
-        this.maxTravelTime = 37;
+    public LocalDate getDepartureDate() {
+        return departureDate;
     }
 
-    public LocalDate getDepDate() {
-        return depDate;
+    public void setDepartureDate(LocalDate departureDate) {
+        this.departureDate = departureDate;
     }
 
-    public void setDepDate(LocalDate depDate) {
-        this.depDate = depDate;
+    public LocalTime getDepartureTimeMin() {
+        return departureTimeMin;
     }
 
-    public LocalTime getDepTimeMin() {
-        return depTimeMin;
+    public void setDepartureTimeMin(LocalTime departureTimeMin) {
+        this.departureTimeMin = departureTimeMin;
     }
 
-    public void setDepTimeMin(LocalTime depTimeMin) {
-        this.depTimeMin = depTimeMin;
+    public LocalTime getDepartureTimeMax() {
+        return departureTimeMax;
     }
 
-    public LocalTime getDepTimeMax() {
-        return depTimeMax;
+    public void setDepartureTimeMax(LocalTime departureTimeMax) {
+        this.departureTimeMax = departureTimeMax;
     }
 
-    public void setDepTimeMax(LocalTime depTimeMax) {
-        this.depTimeMax = depTimeMax;
+    public LocalTime getArrivalTimeMin() {
+        return arrivalTimeMin;
     }
 
-    public LocalTime getArrTimeMin() {
-        return arrTimeMin;
+    public void setArrivalTimeMin(LocalTime arrivalTimeMin) {
+        this.arrivalTimeMin = arrivalTimeMin;
     }
 
-    public void setArrTimeMin(LocalTime arrTimeMin) {
-        this.arrTimeMin = arrTimeMin;
+    public LocalTime getArrivalTimeMax() {
+        return arrivalTimeMax;
     }
 
-    public LocalTime getArrTimeMax() {
-        return arrTimeMax;
+    public void setArrivalTimeMax(LocalTime arrivalTimeMax) {
+        this.arrivalTimeMax = arrivalTimeMax;
     }
 
-    public void setArrTimeMax(LocalTime arrTimeMax) {
-        this.arrTimeMax = arrTimeMax;
+    public LocalDate getArrivalDate() {
+        return arrivalDate;
     }
 
-    public LocalDate getArrDate() {
-        return arrDate;
-    }
-
-    public void setArrDate(LocalDate arrDate) {
-        this.arrDate = arrDate;
+    public void setArrivalDate(LocalDate arrivalDate) {
+        this.arrivalDate = arrivalDate;
     }
 
     public boolean isNoTransfer() {
@@ -102,19 +93,35 @@ public class FilteringParametres {
         this.twoTransfers = twoTransfers;
     }
 
-    public int getMaxDurationOfTransfers() {
+    public Integer getMaxDurationOfTransfers() {
         return maxDurationOfTransfers;
     }
 
-    public void setMaxDurationOfTransfers(int maxDurationOfTransfers) {
+    public void setMaxDurationOfTransfers(Integer maxDurationOfTransfers) {
         this.maxDurationOfTransfers = maxDurationOfTransfers;
     }
 
-    public int getMaxTravelTime() {
+    public Integer getMaxTravelTime() {
         return maxTravelTime;
     }
 
-    public void setMaxTravelTime(int maxTravelTime) {
+    public void setMaxTravelTime(Integer maxTravelTime) {
         this.maxTravelTime = maxTravelTime;
+    }
+
+    public boolean isFlightsFromNow() {
+        return flightsFromNow;
+    }
+
+    public void setFlightsFromNow(boolean flightsFromNow) {
+        this.flightsFromNow = flightsFromNow;
+    }
+
+    public boolean isSegmentDatesFilter() {
+        return segmentDatesFilter;
+    }
+
+    public void setSegmentDatesFilter(boolean segmentDatesFilter) {
+        this.segmentDatesFilter = segmentDatesFilter;
     }
 }
